@@ -1,6 +1,6 @@
 import React from 'react'
 // import styles from './index.css'
-import  './index.css'
+import  './index.less'
 
 class Header extends React.PureComponent{
     constructor(){
@@ -8,7 +8,7 @@ class Header extends React.PureComponent{
     }
     render(){
         // console.log(style)
-        return <header className = "headerCenter">
+        return <header className = "header">
             head
         </header>
     }

@@ -7,11 +7,20 @@ import HomeReducer from './Reducer/HomeReducer.jsx'
 import {createStore,applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
 import promise from 'redux-promise';
+import createSagaMiddleware from 'redux-saga'
 import * as serviceWorker from './serviceWorker';
+import mySaga from './sagas'
+
+const sagaMiddleware = createSagaMiddleware()
+
+
 
 const store = createStore(HomeReducer,
-    applyMiddleware(thunk,promise)
-    )
+    {count: 0},
+    applyMiddleware(thunk,promise,sagaMiddleware)
+)
+
+    sagaMiddleware.run(mySaga)
 // const configureStore = applyMiddleware(thunk)(createStore)
 // const store = configureStore(HomeReducer)
 

@@ -1,0 +1,37 @@
+.aboutBox{
+    -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    -ms-perspective: 1200px;
+    perspective: 1200px;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    background: yellow;
+    height: 500px;
+    text-align: center;
+    // transition:all 3s ease-in 3s;
+    div:nth-of-type(1){
+        width: 100px;
+        height: 100px;
+        border: 20px;
+        border-color: bisque;
+        border-style: dashed;
+        background: red;
+        border-radius: 10px;
+        transition:all 3s ease-in 3s;
+        transform: translate3d(300px,150px,800px)
+    }
+    div:nth-of-type(1):hover{
+        width: 50px;
+    }
+    
+}
+// .aboutBox:hover div:nth-of-type(1){
+//     // transform:rotateZ(45deg);
+//     width: 50px;
+//     // transition: width 1s linear 0s;
+// }

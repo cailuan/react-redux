@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import React, { Suspense, lazy } from 'react';
 import Header from '../Container/Layout/Header.jsx'
+import Footer from '../Container/Layout/Footer.jsx'
 
-const Home = lazy(() => import('../Container/Home.jsx'));
+const Home = lazy(() => import('../Container/HomeBox/Home.jsx'));
 // import Home from '../Container/Home.jsx';
 // import About from '../Container/About.jsx'
-const About = lazy(() => import('../Container/About.jsx'));
+const About = lazy(() => import('../Container/AboutBox/About.jsx'));
 
 const App = () => (<div>
   <Header/>
@@ -17,6 +18,7 @@ const App = () => (<div>
       </Switch>
     </Suspense>
   </Router>
+  <Footer/>
 </div>
   
 );
