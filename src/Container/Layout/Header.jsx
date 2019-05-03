@@ -1,5 +1,4 @@
 import React from 'react'
-// import styles from './index.css'
 import  './index.less'
 
 class Header extends React.PureComponent{
