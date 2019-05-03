@@ -7,7 +7,6 @@ class Header extends React.PureComponent{
         super()
     }
     render(){
-        // console.log(style)
         return <header className = "header">
             head
         </header>
