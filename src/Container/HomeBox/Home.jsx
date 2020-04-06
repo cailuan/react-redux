@@ -1,6 +1,7 @@
 import React ,{Component} from 'react'
 import {connect} from 'react-redux'
 import {addThunk,addPromise,addOneSaga} from '../../Action/HomeAction.jsx'
+import {ThemeContext} from '../Provider'
 
 class Home extends Component{
     constructor(){
@@ -24,10 +25,12 @@ class Home extends Component{
         // console.log(this.props)
        
     }
+    static contextType = ThemeContext;
     render(){
+        console.log(this.context)
         const {count} = this.props
         return(<div> 
-            <header>
+            <header style={this.context}>
                 这是一个头
             </header>
             <button onClick={()=>this.buttonClick('thunk')}>thunk</button>

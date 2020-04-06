@@ -5,7 +5,7 @@ import './App.css';
 
 class App extends Component {
   render() {
-    // react
+    // react noDev
     return (
       <div className="App">
         <header className="App-header">
