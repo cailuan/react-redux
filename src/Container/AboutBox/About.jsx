@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import { Button } from 'antd';
+import Dialog from '../../Component/Dialog'
 import {themes,ThemeContext,ThemeConsumer} from '../Provider'
 import './style.less'
 
@@ -53,20 +54,30 @@ class About extends React.Component {
       constructor(){
           super()
           this.state={
-              countAbled : [1,9]
+              countAbled : [1,9],
+              visable:false
           }
           this.clickButton = this.clickButton.bind(this)
+          this.onClose = this.onClose.bind(this)
           console.log(themes)
       }
     // Assign a contextType to read the current theme context.
     // React will find the closest theme Provider above and use its value.
     // In this example, the current theme is "dark".
     static contextType = ThemeContext;
+    onClose(){
+      this.setState({
+        visable:false
+      })
+    }
     clickButton(){
         
         const countAgen = this.state.countAbled
         console.log(countAgen)
         countAgen.push(0)
+        this.setState({
+          visable:true
+        })
         // this.setState({
         //     countAgen: countAgen.push(0)
         // })
@@ -75,12 +86,16 @@ class About extends React.Component {
       console.log(this.context,this.props)
       return <div>
             <Button theme={this.context} >value</Button>
-            <button onClick={this.clickButton}>button</button>>
+            
+            <button onClick={this.clickButton}>button</button> 
             {
                 this.state.countAbled.map((item)=>{
                     return item
                 })
             }
+            <Dialog visable={this.state.visable} onClose={this.onClose}>
+              <div>123311</div>
+            </Dialog>
           </div>;
     }
   }

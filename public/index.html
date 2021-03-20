@@ -27,6 +27,26 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+      
+    setTimeout(()=>{
+      const script =  document.createElement('script')
+     script.src = 'https://static.oschina.net/new-osc/js/utils/plugins/caret/jquery.caret.min.js'
+     script.onload = function(){
+    
+      //  window.units && window.units()
+      var myEvent = new CustomEvent('units', {
+          detail:{
+              // 将需要传递的数据写在detail中，以便在EventListener中获取
+              // 数据将会在event.detail中得到
+          },
+      });
+      window.dispatchEvent(myEvent)
+     }
+     document.body.append(script)
+    },3000)
+     
+    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -39,3 +59,7 @@
     -->
   </body>
 </html>
+
+
+
+

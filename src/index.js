@@ -15,10 +15,12 @@ const sagaMiddleware = createSagaMiddleware()
 
 
 
-const store = createStore(HomeReducer,
-    {count: 0},
-    applyMiddleware(thunk,promise,sagaMiddleware)
-)
+// const store = createStore(HomeReducer,
+//     {count: 0},
+//     applyMiddleware(thunk,promise,sagaMiddleware)
+// )
+
+const store = applyMiddleware(thunk,promise,sagaMiddleware)(createStore)(HomeReducer,{count: 0})
 
     sagaMiddleware.run(mySaga)
 // const configureStore = applyMiddleware(thunk)(createStore)
@@ -30,3 +32,4 @@ ReactDOM.render(<Provider store ={store} ><Route /></Provider>, document.getElem
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
